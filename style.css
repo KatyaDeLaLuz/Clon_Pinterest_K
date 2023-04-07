@@ -21,27 +21,100 @@
     /* Factor de crecimiento para tarjetas grandes: 26*0.625rem */
 }
 
-main {
+#content {
     height: 100vh;
     width: 100%;
     background-color: blanchedalmond;
 }
 
-nav {
+#navbar-pinterest {
     height: 5rem;
-    background-color: brown;
+    background-color: white;
     display: flex;
 }
 
 .navbar_pinterest_buttons_container {
     width: 16rem;
-    background-color: aquamarine;
+    background-color: white;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-inline-start: 0.50rem;
+}
+
+.navar_pinterest_buttons {
+    height: 0.5rem;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+}
+
+#pinterest-icon {
+    border-radius: 50%;
+    background: white;
+    color: red;
+    border: 0;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    background-position: center;
+    padding-block-start: 0.7rem;
+    padding-block-end: 0.7rem;
+}
+
+#pinterest-icon:hover  {
+    background-color: rgb(218, 206, 206);
+}
+
+.btn_inicio {
+    min-width: 3.5rem;
+    height: 3rem;
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    border: 0;
+    font-weight: bold;
+}
+
+.btn_inicio:focus {
+    color: white;
+    background-color: black;
+    border-radius: 40%;
+    font-weight: bold;
+}
+
+.btn_hoy {
+    min-width: 3.5rem;
+    height: 3rem;
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    border: 0;
+    font-weight: bold;
+}
+
+.btn_hoy:focus {
+    color: white;
+    background-color: black;
+    border-radius: 40%;
+    font-weight: bold;
+}
+#dropdown_crear {
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    border: 0;
+    width: 4rem;
+    font-weight: bold;
+}
+
+#dropdown_crear:hover{
+    outline: none;
 }
 
 .navbar_input_search_container {
-    flex-grow: 4;
+    flex-grow: 3;
     min-width: 3rem;
-    background-color: darkolivegreen;
+    background-color: white;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
@@ -79,8 +152,93 @@ nav {
 }
 
 .navbar_user_buttons_container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
     width: 13rem;
-    background-color: coral;
+    background-color: white;
+}
+
+.navbar_user_buttons {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#notifications {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    color: black;
+    border: 0;
+}
+
+#notifications:hover  {
+    background-color: rgb(218, 206, 206);
+}
+
+#message {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    color: black;
+    border: 0;
+}
+
+#message:hover {
+    background-color: rgb(218, 206, 206);
+}
+
+#profile-img {
+    height: 3rem;
+    width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#profile-img:hover {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    align-content: center;
+    flex-wrap: wrap;
+    background: white;
+    color: black;
+    border: 0;
+    display: flex;
+    background-color: rgb(218, 206, 206);
+}
+
+#desplegar {
+    height: 3rem;
+    width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 0;
+  color: black;
+}
+
+#desplegar:hover {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    align-content: center;
+    flex-wrap: wrap;
+    border: 0;
+    display: flex;
+    background-color: rgb(218, 206, 206);
 }
 
 .pin_container {
@@ -94,14 +252,102 @@ nav {
     grid-template-columns: repeat(auto-fill, var(--card_width));
     grid-auto-rows: var(--row_increment);
     justify-content: center;
-    background-color: black;
+    background-color: white;
 }
 
 .card {
+    position: relative;
     padding: 0;
     margin: 15px 10px;
     border-radius: var(--card_border_radius);
-    background-color: red;
+    background-color:white;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    border-radius: var(--card_border_radius);
+}
+
+.card_buttons_on_hover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: var(--card_border_radius);
+    justify-content: space-between;
+}
+
+.card_buttons_on_hover:hover {
+    opacity: 1;
+}
+
+.boton_Guardar {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+ }
+
+.guardar {
+   min-width: 5rem;
+   min-height: 2.5rem;
+   border-radius: 62rem;
+   background-color: red;
+   border: 0;
+   color: white;
+   margin-inline-end: 0.7rem;
+   margin-top: 1rem;
+   font-weight: bold;
+}
+
+.guardar:hover {
+    background-color: rgb(125, 19, 19);
+}
+
+.tarjeta_abajo {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 0.5rem;
+ }
+
+.boton_1 { 
+   min-width: 2rem;
+   min-height: 2rem;
+   border-radius: 50%;
+   background-color: rgba(253,249,249, 0.473);
+   border: 0;
+   color: black;
+   margin-inline-end: .5rem;
+}
+
+.boton_1:hover {
+    background-color: white;
+}
+
+.boton_2 { 
+    min-width: 2rem;
+    min-height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(253,249,249, 0.473);
+    border: 0;
+    color: black;
+    margin-inline-end: .5rem;
+ }
+ 
+ .boton_2:hover {
+    background-color: white;
 }
 
 .card_small {
@@ -114,4 +360,11 @@ nav {
 
 .card_large {
     grid-row-end: span var(--card_large);
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
 }
